@@ -7,7 +7,7 @@ use std::{
 
 use anyhow::Error;
 
-use crate::utils::Matrix;
+use crate::matrix::Matrix;
 
 /// This structure represents the TSP with time window instane.
 #[derive(Clone)]
