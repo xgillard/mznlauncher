@@ -10,4 +10,5 @@ structopt      = "0.3.22"
 thiserror      = "1.0.26"
 anyhow         = "1.0.41"
 num_cpus       = "1.13.0"
+regex          = "1.5.4"
 killall        = {git = "https://github.com/xgillard/killall"}

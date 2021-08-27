@@ -250,6 +250,7 @@ dependencies = [
  "anyhow",
  "killall",
  "num_cpus",
+ "regex",
  "structopt",
  "thiserror",
 ]

@@ -18,7 +18,6 @@ include "globals.mzn";
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 % INPUT PARAMETERS
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-% - instance_name the name of the instance (used to make output simpler to read)
 % - n:            the number of cities involved in the tour
 % - time_window:  an array 2d where each line time_window[i] is the tuple
 %                 [earliest arrival time, latest arrival time].
@@ -26,7 +25,6 @@ include "globals.mzn";
 %                 distance[i, j] is the time it takes to travel from city i to
 %                 city j.
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-string:                      instance_name;
 int:                         n;
 array[Cities,1..2]   of int: time_window;
 array[Cities,Cities] of int: distance;
@@ -157,5 +155,6 @@ array[Cities] of var int: perm = permutation();
 
 % == Actually print out any solution found
 output[
-  instance_name ++" | \(makespan/10000.0) | \(perm)"
+  "% makespan: \(makespan/10000.0) \n" ++
+  "% permutation: \(perm) \n"
 ]
