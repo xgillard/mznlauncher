@@ -1,0 +1,13 @@
+[package]
+name = "tsptw2minizinc"
+version = "0.1.0"
+edition = "2018"
+
+# See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
+
+[dependencies]
+structopt      = "0.3.22"
+thiserror      = "1.0.26"
+anyhow         = "1.0.41"
+num_cpus       = "1.13.0"
+killall        = {git = "https://github.com/xgillard/killall"}
