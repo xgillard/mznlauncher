@@ -10,7 +10,7 @@ use anyhow::Error;
 use regex::Regex;
 use structopt::StructOpt;
 
-use tsptw2minizinc::{psp::load_psp, timeout::timeout, tsptw::load_tsptw};
+use mznlaunch::{psp::load_psp, timeout::timeout, tsptw::load_tsptw};
 
 #[derive(StructOpt)]
 enum Args {
