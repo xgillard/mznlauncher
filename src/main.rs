@@ -58,13 +58,16 @@ pub fn invoke_psp_mzn(fname: &str) -> Result<Child, Error> {
         .arg("--parallel")
         .arg(num_cpus::get().to_string())
         .arg("--input-from-stdin")
-        .arg("psp.mzn")
+        //.arg("psp.mzn")
         .stdin(Stdio::piped())
         .stdout(Stdio::piped())
         .spawn()?;
 
+    let instance = include_str!("../psp.mzn");
+
     let mut stdin = child.stdin.take().expect("Failed to take stdin");
     stdin.write_all(dzn.as_bytes())?;
+    stdin.write_all(instance.as_bytes())?;
 
     let stdout = child.stdout.take().expect("Failed to take stdout");
     let stdout = BufReader::new(stdout);
@@ -87,13 +90,16 @@ pub fn invoke_tsptw_mzn(fname: &str) -> Result<Child, Error> {
         .arg("--parallel")
         .arg(num_cpus::get().to_string())
         .arg("--input-from-stdin")
-        .arg("tsptw.mzn")
+        //.arg("tsptw.mzn")
         .stdin(Stdio::piped())
         .stdout(Stdio::piped())
         .spawn()?;
 
+    let instance = include_str!("../tsptw.mzn");
+
     let mut stdin = child.stdin.take().expect("Failed to take stdin");
     stdin.write_all(dzn.as_bytes())?;
+    stdin.write_all(instance.as_bytes())?;
 
     let stdout = child.stdout.take().expect("Failed to take stdout");
     let stdout = BufReader::new(stdout);
