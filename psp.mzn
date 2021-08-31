@@ -136,9 +136,14 @@ solve ::int_search(plan, dom_w_deg, indomain_random, complete) minimize total_co
 % end, we simply compute the permutation of the solution and rebase it so that
 % it is 0-indexed iso 1-indexed (which is used in minizinc).
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+% == Simply stores the solution so as to print it out                       ==
+array[Time] of var int: solution = [ plan[t] -1 | t in Time ];
+
+
 output [
     "% total cost : \(total_cost)  \n" ++
     "% stocking   : \(tot_st_cost) \n" ++ 
     "% changeover : \(tot_co_cost) \n" ++
-    "% plan       : \(plan)"
+    "% plan       : \(solution)"
 ]
