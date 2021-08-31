@@ -13,7 +13,13 @@
 % Author: X. Gillard <xavier.gillard@uclouvain.be>
 % Date:   August 27, 2021
 %-------------------------------------------------------------------------------
-include "globals.mzn";
+
+%include "globals.mzn";
+include "circuit.mzn";
+include "maximum.mzn";
+include "minimum.mzn";
+include "sum_pred.mzn";
+include "sum_set.mzn";
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 % INPUT PARAMETERS
